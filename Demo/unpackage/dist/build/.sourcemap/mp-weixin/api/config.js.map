@@ -1,0 +1,1 @@
+{"version":3,"file":"config.js","sources":["../../../../../api/config.js"],"sourcesContent":null,"names":["config","api","uni","index","getAccountInfoSync","miniProgram","envVersion"],"mappings":"oDAAeA,EAAA,CAEdC,IAAK,WACaC,EAAGC,MAACC,qBAAqBC,YAAYC,WAS7C,MAAA,4BAET"}

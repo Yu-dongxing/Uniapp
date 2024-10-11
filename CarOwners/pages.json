@@ -1,0 +1,88 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path" : "pages/appshop/appshop",
+			"style" : 
+			{
+				"navigationBarTitleText" : "应用市场"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project01/Project01",
+			"style" : 
+			{
+				"navigationBarTitleText" : "中控大屏-360度全景功能-倒车"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project02/Project02",
+			"style" : 
+			{
+				"navigationBarTitleText" : " 中控大屏-媒体播放"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project03/Project03",
+			"style" : 
+			{
+				"navigationBarTitleText" : " 中控大屏-天气显示"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project04/Project04",
+			"style" : 
+			{
+				"navigationBarTitleText" : "中控大屏-空调"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project05/Project05",
+			"style" : 
+			{
+				"navigationBarTitleText" : "车主手机"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project06/Project06",
+			"style" : 
+			{
+				"navigationBarTitleText" : "智能充电商用版小程序-订单"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project07/Project07",
+			"style" : 
+			{
+				"navigationBarTitleText" : "中控大屏-应用市场"
+			}
+		},
+		{
+			"path" : "pages/Code01Page/Project08/Project08",
+			"style" : 
+			{
+				"navigationBarTitleText" : "数据分析"
+			}
+		},
+		{
+			"path" : "pages/login/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : "登录\r
+		\t\t"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

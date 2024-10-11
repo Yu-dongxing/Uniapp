@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/demo/demo",
+    "pages/dshow/dshow"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "YUCMS",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "borderStyle": "white",
+    "blurEffect": "extralight",
+    "backgroundColor": "rgba(255, 255, 255, 0.5)",
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/index/首页.png",
+        "selectedIconPath": "static/index/首页s.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/dshow/dshow",
+        "iconPath": "static/dd/订单.png",
+        "selectedIconPath": "static/dd/订单s.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "static/my/我的.png",
+        "selectedIconPath": "static/my/我的s.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

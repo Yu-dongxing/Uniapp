@@ -1,0 +1,47 @@
+.content .M.data-v-1cf27b2a {
+  width: 100px;
+  height: 150px;
+}
+.content .H.data-v-1cf27b2a {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .F.data-v-1cf27b2a {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(229, 229, 229, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.content .F .F_A.data-v-1cf27b2a,
+.content .F .F_B.data-v-1cf27b2a,
+.content .F .F_C.data-v-1cf27b2a {
+  width: 80px;
+  height: 40px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--index-footer-bored-radis);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content .F .F_A p.data-v-1cf27b2a,
+.content .F .F_B p.data-v-1cf27b2a,
+.content .F .F_C p.data-v-1cf27b2a {
+  color: aliceblue;
+}
+.content .F .F_A p.data-v-1cf27b2a:hover,
+.content .F .F_B p.data-v-1cf27b2a:hover,
+.content .F .F_C p.data-v-1cf27b2a:hover {
+  color: #000;
+}
