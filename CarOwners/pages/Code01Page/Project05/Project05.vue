@@ -57,7 +57,7 @@ export default {
       batteryLevel: 80,
       range: 300,
       carModelSrc: '/static/3d-car-model.png',
-      isModelLoading: true,
+      isModelLoading: false,
       isDoorOpen: false
     }
   },

@@ -208,7 +208,8 @@ export default {
     },
 	getinfo(){
 		this.$request("/dev-api/bs-smart-charger/pile/alllist","GET").then(res=>{
-			console.log(res);
+			console.log(length(res.data));
+			
 		}).catch(err=>{
 			console.log(err);
 		})
