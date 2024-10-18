@@ -356,13 +356,19 @@
 								font-size: 40px;
 							}
 						}
-						.time{}
+						.time{
+							
+						}
 					}
 					.r-tab{
 						width: 100%;
 						height: var(--r-tab-hight);//80
-						background-color: #ffffff;
+						// background-color: #ffffff;
 						.tab-item{
+							
+							display: flex;
+							align-content:center;
+							justify-content: center;
 							.item{}
 						}
 					}
