@@ -9,29 +9,17 @@ less : css语言
 ```
 
 ## 🏗️ 文件结构
-### 1. CarOwners(车主手机App)
-[CarOwners(车主手机App)](./CarOwners(车主手机App)/)
+| 项目名 | 项目链接 |
+| --- | --- |
+| CarOwners(车主手机App) | [CarOwners(车主手机App)](./CarOwners(车主手机App)/) |
+| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) |
+| DIC（仪表盘） | [仪表盘](./DIC(仪表盘)/) |
+| Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) |
+| dist2(智能充电商用版小程序) | [dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/) |
+| 试题(一) | [试题(一)](试题(一)) |
+| IVIFTaskX(副屏 ) | [IVIFTaskX(副屏 )](./IVIFTaskX(副屏%20)/) |
+| DEMO(智能充电商用版小程序-测试) | [智能充电商用版小程序-测试](./Demo/) |
 
-### 2.IVIZTaskX(中控屏)
-[IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/)
-
-### 3.DIC（仪表盘）
-[仪表盘](./DIC(仪表盘)/)
-
-### 4.Charge(智能充电家用版App)
-[Charge(智能充电家用版App)](./Charge(智能充电家用版App)/)
-
-### 5.dist2(智能充电商用版小程序)
-[dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/)
-
-### 6.试题(一)
-[试题(一)](试题(一))
-
-### 7.IVIFTaskX(副屏 )
-[IVIFTaskX(副屏 )](./IVIFTaskX(副屏%20)/)
-
-### 8.DEMO(智能充电商用版小程序-测试)
-[智能充电商用版小程序-测试](./Demo/)
 
 ## 🚀 项目功能
 + **前端开发**: 构建用户界面和用户体验。
