@@ -9,16 +9,16 @@ less : css语言
 ```
 
 ## 🏗️ 文件结构
-| 项目名 | 项目链接 |
-| --- | --- |
-| CarOwners(车主手机App) | [CarOwners(车主手机App)](./CarOwners(车主手机App)/) |
-| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) |
-| DIC（仪表盘） | [仪表盘](./DIC(仪表盘)/) |
-| Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) |
-| dist2(智能充电商用版小程序) | [dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/) |
-| 试题(一) | [试题(一)](试题(一)) |
-| IVIFTaskX(副屏 ) | [IVIFTaskX(副屏 )](./IVIFTaskX(副屏%20)/) |
-| DEMO(智能充电商用版小程序-测试) | [智能充电商用版小程序-测试](./Demo/) |
+| 项目名 | 项目链接 | 完成情况 |
+| --- | --- | :---: |
+| CarOwners(车主手机App) | [CarOwners(车主手机App)](./CarOwners(车主手机App)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> |
+| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> |
+| DIC（仪表盘） | [仪表盘](./DIC(仪表盘)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> |
+| Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> |
+| dist2(智能充电商用版小程序) | [dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> |
+| IVIFTaskX(副屏 ) | [IVIFTaskX(副屏 )](./IVIFTaskX(副屏%20)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> |
+| DEMO(智能充电商用版小程序-测试) | [智能充电商用版小程序-测试](./Demo/) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> |
+| 试题(一) | [试题(一)](试题(一)) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> |
 
 
 ## 🚀 项目功能
