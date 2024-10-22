@@ -90,7 +90,15 @@
 							<span>19:35</span>
 						</view>
 					</view>
-					<view class="r-tab"></view>
+					<view class="r-tab">
+						<view class="tab-item">
+							<view class="item" v-for="(item,index) in list" :key="index" :class="{ 'item_active': activeIndex === index }" @tap="activateTab(index)">
+								<view class="title">
+									<text>{{ item.title }}</text>
+								</view>
+							</view>
+						</view>
+					</view>
 					<view class="r-car"></view>
 					<view class="r-set"></view>
 				</view>
@@ -106,7 +114,24 @@
 
 <script>
 	export default {
-		
+		data() {
+			return {
+				activeIndex: 0, // 假设这是当前激活的tab索引
+				list:[
+					{id:1,title:"安全辅助"},
+					{id:2,title:"车内摄像"},
+					{id:3,title:"显示设置"},
+					{id:4,title:"WIFI"},
+				]
+			}
+		},
+		methods:{
+			// 为点击的元素添加active类
+			activateTab(index) {
+				// 移除之前激活的元素的active类
+				this.activeIndex = index;
+			}
+		}
 	}
 </script>
 
@@ -365,17 +390,48 @@
 						height: var(--r-tab-hight);//80
 						// background-color: #ffffff;
 						.tab-item{
-							
 							display: flex;
-							align-content:center;
-							justify-content: center;
-							.item{}
+							justify-content: space-around;
+							align-content: center;
+							align-items: center;
+							.item{
+								margin: 0 5px 0 5px;
+								// background-color: #ff0000;
+								width: 200px;
+								height: var(--r-tab-hight);
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								
+								.title{
+									transition: font-size 0.3s ease-in-out; /* 添加动画 */
+									
+									font-size: calc(var(--font-size) - 5px ) ;
+									color: #747474;
+								}
+							}
+							.item_active{
+								transition: border-bottom-color 0.3s ease-in-out;
+								border-bottom-width: 1px;
+								border-bottom-style: solid;
+								border-bottom-color: rgb(0, 157, 255);
+								.title{
+									font-size: var(--font-size);
+									color: #ffffff;
+								}
+							}
 						}
 					}
 					.r-car{
 						width: 100%;
 						height: var(--r-car-hight);//600
 						// background-color: #ffffff;
+						display: flex;
+						.car-lift-bu{
+							
+						}
+						.car-main{}
+						.car-right-bu{}
 					}
 					.r-set{
 						width: 100%;
