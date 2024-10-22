@@ -4,30 +4,21 @@
 
 ## 📝使用说明
 ### 1.需要安装的插件
-:::tips
-less
-
-:::
+```vue
+less : css语言
+```
 
 ## 🏗️ 文件结构
 ### 1. CarOwners(车主手机App)
-**车主手机APP项目**  
-[查看项目](./CarOwners(车主手机App)/)
+[CarOwners(车主手机App)](./CarOwners(车主手机App)/)
 
 ### 2.IVIZTaskX(中控屏)
-**汽车中控屏项目**  
-[查看项目](./IVIZTaskX(中控屏)/)
-
-
+[IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/)
 
 ### 3.DIC（仪表盘）
-汽车仪表盘项目
-
 [仪表盘](./DIC(仪表盘)/)
 
 ### 4.Charge(智能充电家用版App)
-Charge(智能充电家用版App)项目
-
 [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/)
 
 ### 5.dist2(智能充电商用版小程序)
