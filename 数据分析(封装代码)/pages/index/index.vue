@@ -1,11 +1,11 @@
 <template>
   <view>
-    <echarts :options="chartOptions" />
+    <echarts :option="chartOption" @click="handleClick"></echarts>
   </view>
 </template>
 
 <script>
-import Echarts from '@/components/echarts.vue';
+import Echarts from '@/components/Echarts.vue';
 
 export default {
   components: {
@@ -13,28 +13,32 @@ export default {
   },
   data() {
     return {
-      chartOptions: {
-        title: {
-          text: 'ECharts 示例'
-        },
-        tooltip: {},
+      chartOption: {
+        id: 'chart',
+        width: '100%',
+        height: '400px',
         xAxis: {
-          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         },
-        yAxis: {},
-        series: [
-          {
-            name: '销量',
-            type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [120, 200, 150, 80, 70, 110, 130],
+          type: 'bar',
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(180, 180, 180, 0.2)'
           }
-        ]
+        }]
       }
     };
+  },
+  methods: {
+    handleClick(params) {
+      console.log('Chart click:', params);
+    }
   }
-};
+}
 </script>
-
-<style>
-/* 自定义样式 */
-</style>

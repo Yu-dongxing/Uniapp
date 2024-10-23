@@ -1,69 +1,68 @@
 <template>
-  <view class="echart-container">
-    <!-- 使用 echarts 组件 -->
-    <ec-canvas
-      id="mychart-dom"
-      canvas-id="mychart"
-      :disable-touch="false"
-      :ec="ec"
-    />
-  </view>
+  <view class="echarts" :id="option.id" :style="{width: option.width, height: option.height}"></view>
 </template>
 
 <script>
 import * as echarts from 'echarts';
 
 export default {
+  name: 'Echarts',
   props: {
-    options: {
+    option: {
       type: Object,
       required: true
     }
   },
+  created() {
+    // 设置随机数id
+    let t = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let len = t.length;
+    let id = '';
+    for (let i = 0; i < 32; i++) {
+      id += t.charAt(Math.floor(Math.random() * len));
+    }
+    this.option.id = id;
+  },
+  methods: {
+    onViewClick(params) {
+      this.$emit('click', params);
+    }
+  }
+}
+</script>
+
+<script module="echarts" lang="renderjs">
+export default {
   data() {
     return {
-      ec: {
-        lazyLoad: true // 懒加载
-      },
-      chart: null
+      chart: null,
+      clickData: null
     };
   },
   mounted() {
-    this.$nextTick(() => {
-      this.initChart(); // 初始化图表
-    });
+    this.init();
   },
   methods: {
-    initChart() {
-      // 获取 DOM 节点
-      this.$refs.canvas.init((canvas, width, height, dpr) => {
-        const chart = echarts.init(canvas, null, {
-          width: width,
-          height: height,
-          devicePixelRatio: dpr
-        });
-        chart.setOption(this.options);
-        this.chart = chart;
-        return chart;
+    init() {
+      this.chart = echarts.init(document.getElementById(this.option.id));
+      this.update(this.option);
+      this.chart.on('click', params => {
+        this.clickData = params;
+        this.onViewClick(params);
       });
     },
-    updateChart(options) {
+    update(option) {
       if (this.chart) {
-        this.chart.setOption(options);
+        this.chart.setOption(option, option.notMerge);
       }
     }
-  },
-  watch: {
-    options(newVal) {
-      this.updateChart(newVal); // 数据更新时更新图表
-    }
   }
-};
+}
 </script>
 
 <style scoped>
-.echart-container {
+.echarts {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 </style>
