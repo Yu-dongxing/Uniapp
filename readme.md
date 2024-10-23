@@ -22,6 +22,7 @@ e-charts：
 | Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月01日 |
 | dist2(智能充电商用版小程序) | [dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月01日 |
 | IVIFTaskX(副屏 ) | [IVIFTaskX(副屏 )](./IVIFTaskX(副屏%20)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月01日 |
+| 数据分析(封装代码) | [数据分析(封装代码)](./数据分析(封装代码)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月23日 |
 
 
 ## 项目功能
@@ -42,8 +43,9 @@ git clone https://github.com/Yu-dongxing/Uniapp.git
 ## 人员安排
 | 人员 | 负责项目 |
 | --- | --- |
-|  | |
-| | |
+| @Yu-DongXing | 前端，后端，分析 |
+| @JWQ | 设计，前端 |
+| @MWQ | 设计，前端 |
 
 
 ## 项目 License
