@@ -291,8 +291,8 @@
 				.l-l,.l-r{
 					width: 1px;
 					height: 100%;
-					// background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 89, 255, 0.7) 100%, rgba(5, 5, 5, 1) 100%);
-					background-color: #ffffff;
+					background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 89, 255, 0.7) 100%, rgba(5, 5, 5, 1) 100%);
+					// background-color: #ffffff;
 					transform: skew(-10deg, 0deg);
 				}
 				.car{
