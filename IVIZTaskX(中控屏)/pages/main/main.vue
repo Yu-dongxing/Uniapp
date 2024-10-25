@@ -1,7 +1,7 @@
 <template>
 	<view class="dashboard">
 		<view class="sildebar-l">
-			<view class="l-item" v-for="(item,index) in index_item " :key="index">
+			<view class="l-item" v-for="(item,index) in index_item " :key="index" :class="{ 'l-item-ac': in_active === index }" @tap="index_active(index)">
 				<view class="icon">
 					<img :src="item.icon" :alt="item.title"/>
 				</view>
@@ -36,7 +36,7 @@
 						<view class="sudu-a">
 							<button @click="dell_max_sundun()">-</button>
 						</view>
-						<view class="sudu-warn">
+						<view class="sudu-warn" :class="sundun_active ? 'sudu-warn-red' : 'sudu-warn-ok'">
 							<span>{{ data_list.max_sundun }}</span>
 							<view class="sudu-max">
 								<span>MAX</span>
@@ -106,6 +106,8 @@
 			return {
 				activeIndex: 0, // 假设这是当前激活的tab索引
 				in_active:0,
+				sundun_active:0,
+				// isDisabled:0,
 				index_item:[
 					{id:1,title:"首页汽车",icon:"/static/index_svg/in_car.svg"},
 					{id:2,title:"导航",icon:"/static/index_svg/in_map.svg"},
@@ -124,8 +126,8 @@
 					
 				},
 				data_list:{
-					sundun:69,
-					max_sundun:80,
+					sundun:70,
+					max_sundun:70,
 					car_sundun_ch:"",
 					power:"471",
 					
@@ -144,20 +146,31 @@
 				// 移除之前激活的元素的active类
 				this.activeIndex = index;
 			},
+			index_active(index){
+				this.in_active = index;
+			},
+			f_sundun_active(){
+				this.sundun_active= !this.sundun_active;
+			},
 			add_max_sundun(){
-				
-				if(this.data_list.max_sundun<=0){
-					this.data_list.max_sundun=this.data_list.max_sundun+1
+				this.data_list.max_sundun=this.data_list.max_sundun+1;
+				if(this.data_list.max_sundun>=80){
+					this.sundun_active=1;
 				}
+				
 			},
 			dell_max_sundun(){
-				this.data_list.max_sundun=this.data_list.max_sundun-1
+				this.data_list.max_sundun=this.data_list.max_sundun-1;
+				if(this.data_list.max_sundun<=80){
+					this.sundun_active=0;
+				}
+				
 			}
 		}
 	}
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 	*{
 		padding: 0px;
 		margin: 0px;
@@ -192,7 +205,11 @@
 			flex-wrap: nowrap;
 			align-items: center;
 			overflow: auto;
+			.l-item-ac{
+				background-color: #2a2a2a;
+			}
 			.l-item{
+				transition: background-color 0.3s ease;
 				margin-top: 5vh;
 				width: 100px;
 				height: 80px;
@@ -295,18 +312,25 @@
 								background-color: #2a2a2a;
 							}
 						}
+						.sudu-warn-red{
+							--back-color:#ff0000;//#42ff38
+						}
+						.sudu-warn-ok{
+							--back-color:#42ff38;//#42ff38
+						}
 						.sudu-warn{
-							width: 60px;
-							height: 60px;
+							// --back-color:#42ff38;//#42ff38
+							width: 70px;
+							height: 70px;
 							border-radius: 60px;
-							border: 5px solid #ff0000;
+							border: 5px solid var(--back-color);
 							// background-color: #ffffff;
 							margin-left: 30px;
 							margin-right: 25px;
 							display: flex;
 							justify-content: center;
 							align-items: center;
-							box-shadow: 0px 0px 5px 1px #ff0000;
+							box-shadow: 0px 0px 5px 1px var(--back-color);
 							position: relative;
 							span{
 								color: #ffffff;
