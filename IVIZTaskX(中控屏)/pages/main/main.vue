@@ -11,7 +11,7 @@
 			<view class="main-t">
 				<view class="t-car-l">
 					<view class="l-mun">
-						<span>69</span>
+						<span>{{ data_list.sundun }}</span>
 					</view>
 					<view class="l-mun-dun">
 						<view class="dun-f">
@@ -26,24 +26,24 @@
 						</view>
 						<view class="power">
 							<view class="icon">
-								<svg t="1728826975947" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7193" data-spm-anchor-id="a313x.search_index.0.i17.17343a81diCCci" width="48" height="48"><path d="M1024 576v64h-64a192 192 0 0 1-192 192H192a192 192 0 0 1-192-192V384a192 192 0 0 1 192-192h576a192 192 0 0 1 192 192h64v192z m-192-192a64 64 0 0 0-64-64H192a64 64 0 0 0-64 64v256c0 35.392 28.608 64 64 64h576c35.392 0 64-28.608 64-64V384z m-384 0h64v256h-64V384z m-128 0h64v256h-64V384z m-128 0h64v256H192V384z" p-id="7194" data-spm-anchor-id="a313x.search_index.0.i18.17343a81diCCci" class="selected" fill="#1afa29"></path></svg>
+								<img :src="main_car_lift.power_icon" :alt="main_car_lift.power_icon" />
 							</view>
-							<span>475KM</span>
+							<span>{{ data_list.power }}KM</span>
 						</view>
 					</view>
 					<view class="l-hr"></view>
 					<view class="l-sudu">
 						<view class="sudu-a">
-							<button>-</button>
+							<button @click="dell_max_sundun()">-</button>
 						</view>
 						<view class="sudu-warn">
-							<span>80</span>
+							<span>{{ data_list.max_sundun }}</span>
 							<view class="sudu-max">
 								<span>MAX</span>
 							</view>
 						</view>
 						<view class="sudu-b">
-							<button>+</button>
+							<button @click="add_max_sundun()">+</button>
 						</view>
 					</view>
 					<view class="l-car-action">
@@ -54,13 +54,13 @@
 					<view class="l-bu">
 						<!-- <view class="bu-item"> -->
 							<view class="item-a1">
-									<svg t="1729064665240" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15601" data-spm-anchor-id="a313x.search_index.0.i1.7fa33a814TiJdn" width="48" height="48"><path d="M896 448c0-212-172-384-384-384S128 236 128 448c0 192.8 142.4 352.8 328 380l-4 68H256v64h512v-64H573.6l-4-68C754.4 800 896 640.8 896 448zM512 768c-176.8 0-320-143.2-320-320s143.2-320 320-320 320 143.2 320 320-143.2 320-320 320z m0-560c-132.8 0-240 107.2-240 240s107.2 240 240 240 240-107.2 240-240-107.2-240-240-240zM416 512c-52.8 0-96-43.2-96-96s43.2-96 96-96 96 43.2 96 96-43.2 96-96 96z" p-id="15602" data-spm-anchor-id="a313x.search_index.0.i0.7fa33a814TiJdn" class="selected" fill="#ffffff"></path></svg>
+									<img :src="main_car_lift.voide_top_icon" alt="1" />
 							</view>
 							<view class="item-a2">
-								<svg t="1729064980958" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17174" width="48" height="48"><path d="M209 540.3h228.9l-25.3 331.1c-2.7 35.3 42.1 52.1 62.6 23.4C580.7 747.7 764.7 491 764.7 491c16.6-23.2 0.2-55.7-28.1-55.7l-228.9-0.1L533 104.1c2.7-35.3-42.1-52-62.7-23.3L180.9 484.6c-16.6 23.2-0.3 55.7 28.1 55.7z" fill="#ffffff" p-id="17175" data-spm-anchor-id="a313x.search_index.0.i8.7fa33a814TiJdn" class="selected"></path></svg>
+								<img :src="main_car_lift.chage_icon" alt="1" />
 							</view>
 							<view class="item-a3">
-								<svg t="1729065043542" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18361" width="48" height="48"><path d="M507.52 673.6h23.68c85.12 0 154.24-65.92 154.24-147.2V198.08c0-81.28-69.12-147.2-154.24-147.2h-23.68c-85.12 0-154.24 65.92-154.24 147.2v328.32c0 81.28 69.12 147.2 154.24 147.2z" fill="#ffffff" p-id="18362" data-spm-anchor-id="a313x.search_index.0.i13.7fa33a814TiJdn" class="selected"></path><path d="M845.76 487.68a40.32 40.32 0 0 0-47.04 32c-28.48 151.68-145.92 261.76-279.04 261.76-134.08 0-251.84-111.04-279.68-264-3.84-21.76-24.96-36.16-46.72-32.32-21.76 4.16-36.48 24.96-32.32 46.72 32 175.68 161.92 307.2 317.12 327.36v118.4c0 5.76 4.48 9.92 9.92 9.92h63.04c5.76 0 9.92-4.48 9.92-9.92v-118.4c154.24-19.84 284.48-150.4 317.12-324.48 3.84-21.76-10.56-42.88-32.32-47.04z" fill="#ffffff" p-id="18363" data-spm-anchor-id="a313x.search_index.0.i14.7fa33a814TiJdn" class="selected"></path></svg>
+								<img :src="main_car_lift.sign_icon" alt="1" />
 							</view>
 						<!-- </view> -->
 					</view>
@@ -68,7 +68,7 @@
 				<view class="t-car-r">
 					<view class="r-wifi-show">
 						<view class="wifi">
-							<svg t="1729065612265" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19545" width="48" height="48"><path d="M0 352.832l93.12 98.752c231.296-245.44 606.464-245.44 837.76 0L1024 352.832C741.44 53.056 283.008 53.056 0 352.832z m372.352 395.008L512 896l139.648-148.16c-76.8-81.92-202.048-81.92-279.296 0zM186.24 550.4l93.12 98.752c128.448-136.32 336.96-136.32 465.408 0L837.824 550.4c-179.648-190.592-471.488-190.592-651.648 0z" fill="#ffffff" p-id="19546" data-spm-anchor-id="a313x.search_index.0.i19.7fa33a814TiJdn" class="selected"></path></svg>
+							<img :src="main_car_right.wifi_icon" alt="1" />
 						</view>
 						<view class="timp">
 							<span>24</span>
@@ -113,6 +113,23 @@
 					{id:4,title:"音乐",icon:"/static/index_svg/in_music.svg"},
 					{id:5,title:"设置",icon:"/static/index_svg/in_set.svg"}
 				],
+				main_car_lift:{
+					power_icon:"/static/main_car_lift_icon/power.svg",
+					voide_top_icon:"/static/main_car_lift_icon/voide_top.svg",
+					chage_icon:"/static/main_car_lift_icon/chage.svg",
+					sign_icon:"/static/main_car_lift_icon/sign.svg"
+				},
+				main_car_right:{
+					wifi_icon:"/static/main_car_right_icon/wifi.svg",
+					
+				},
+				data_list:{
+					sundun:69,
+					max_sundun:80,
+					car_sundun_ch:"",
+					power:"471",
+					
+				},
 				list:[
 					{id:1,title:"安全辅助"},
 					{id:2,title:"车内摄像"},
@@ -126,6 +143,15 @@
 			activateTab(index) {
 				// 移除之前激活的元素的active类
 				this.activeIndex = index;
+			},
+			add_max_sundun(){
+				
+				if(this.data_list.max_sundun<=0){
+					this.data_list.max_sundun=this.data_list.max_sundun+1
+				}
+			},
+			dell_max_sundun(){
+				this.data_list.max_sundun=this.data_list.max_sundun-1
 			}
 		}
 	}
