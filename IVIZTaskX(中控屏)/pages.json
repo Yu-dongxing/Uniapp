@@ -5,17 +5,23 @@
 			"path" : "pages/main/main",
 			"style" : 
 			{
-				"transparentTitle": "always",
-				"navigationBarTitleText" : ""
+				"transparentTitle": "always"
 			}
 		},
 		{
 			"path": "pages/index/index",
 			"style": {
-				"transparentTitle": "always",
-				"navigationBarTitleText": "uni-app"
+				"transparentTitle": "always"
 			}
 		},
+		{
+			"path" : "pages/main_car/main_car",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"transparentTitle": "always"
+			}
+		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
