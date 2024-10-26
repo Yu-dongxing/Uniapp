@@ -1,4 +1,4 @@
-**📚**** UNIAPP 项目（移动应用开发）**
+📚 UNIAPP 项目（移动应用开发）
 
 ## 简介
 `UNIAPP 项目（移动应用开发） 是一个使用uniapp框架搭建的移动应用开发项目。这个仓库旨在记录我在学习过程中的项目，同时也为其他学习者提供一个参考和学习的平台。`
@@ -18,7 +18,7 @@ e-charts：
 | 试题(一) | [试题(一)](试题(一)) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> | 10月20日 |
 | DEMO(智能充电商用版小程序-测试) | [智能充电商用版小程序-测试](./Demo/) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> | 10月21日 |
 | CarOwners(车主手机App) | [CarOwners(车主手机App)](./CarOwners(车主手机App)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月24日 |
-| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 10月26日 |
+| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 10月24日 |
 | DIC（仪表盘） | [仪表盘](./DIC(仪表盘)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月22日 |
 | Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月01日 |
 | dist2(智能充电商用版小程序) | [dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 10月24日 |
