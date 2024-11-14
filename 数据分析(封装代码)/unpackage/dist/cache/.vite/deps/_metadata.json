@@ -1,13 +1,13 @@
 {
-  "hash": "efdf9aba",
-  "configHash": "3667b3ba",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "534d5123",
+  "hash": "b6e36112",
+  "configHash": "517a9020",
+  "lockfileHash": "70b3bc56",
+  "browserHash": "47b709b0",
   "optimized": {
-    "echarts": {
-      "src": "../../../../../node_modules/echarts/index.js",
-      "file": "echarts.js",
-      "fileHash": "b9b41f7e",
+    "@qiun/ucharts": {
+      "src": "../../../../../node_modules/@qiun/ucharts/u-charts.js",
+      "file": "@qiun_ucharts.js",
+      "fileHash": "bdab71c5",
       "needsInterop": false
     }
   },

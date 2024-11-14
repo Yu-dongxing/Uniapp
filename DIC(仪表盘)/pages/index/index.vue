@@ -6,23 +6,19 @@
       <text>2月12日 周四 12:22</text>
       <text>电费：0</text>
     </view>
-
     <!-- 仪表盘部分 -->
     <view class="circle-container">
       <!-- 左侧：转速表 -->
       <canvas canvas-id="speedCircle" class="speed-circle"></canvas>
-
       <!-- 中间：导航信息 -->
       <view class="navigation-info">
         <text class="direction">302米直行</text>
         <text class="road">进入人民路</text>
         <image class="map-image" src="/static/map.png"></image> <!-- 地图占位符 -->
       </view>
-
       <!-- 右侧：功率图 -->
       <canvas canvas-id="powerCircle" class="power-circle"></canvas>
     </view>
-
     <!-- 底部信息显示 -->
     <view class="bottom-info">
       <text>剩余电量: 256KM</text>

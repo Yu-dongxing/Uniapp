@@ -12,7 +12,7 @@
 			</view>
 			<view class="status">
 				<text class="wifi-icon">📶</text>
-				<text class="temperature">24°C</text>
+				<text class="temperature" @click="go_to('/pages/wether/wether')">24°C</text>
 				<text class="time">19:35</text>
 			</view>
 		</view>
@@ -20,7 +20,7 @@
 		<view class="main-content">
 			<view class="sidebar">
 				<view class="sidebar-item">
-					<view class="icon">🚗</view>
+					<view class="icon" @click="go_to('/pages/main/main')">🚗</view>
 				</view>
 				<view class="sidebar-item">
 					<view class="icon">🧭</view>
@@ -28,7 +28,7 @@
 				<view class="sidebar-item">
 					<view class="icon">▦</view>
 				</view>
-				<view class="sidebar-item">
+				<view class="sidebar-item" @click="go_to('/pages/music/music')">
 					<view class="icon">🎵</view>
 				</view>
 				<view class="sidebar-item">
@@ -98,7 +98,15 @@
 					},
 				]
 			}
+		},
+		methods:{
+			go_to(path){
+				uni.navigateTo({
+					url:path
+				});
+			},
 		}
+		
 	}
 </script>
 

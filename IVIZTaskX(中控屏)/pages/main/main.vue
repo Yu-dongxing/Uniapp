@@ -1,7 +1,7 @@
 <template>
 	<view class="dashboard">
 		<view class="sildebar-l">
-			<view class="l-item" v-for="(item,index) in index_item " :key="index" :class="{ 'l-item-ac': in_active === index }" @tap="index_active(index)">
+			<view class="l-item" v-for="(item,index) in index_item " :key="index" :class="{ 'l-item-ac': in_active === index }" @tap="index_active(index)" @click="go_to(item.path)">
 				<view class="icon">
 					<img :src="item.icon" :alt="item.title"/>
 				</view>
@@ -15,11 +15,9 @@
 					</view>
 					<view class="l-mun-dun">
 						<view class="dun-f">
-							<span>P</span>
-							<span>R</span>
-							<span>N</span>
-							<span>D</span>
-							<span>READY</span>
+							<span v-for="(item , index ) in dun_wun" :key="index" @click="go_to(item.path)">
+								{{ item.name }}
+							</span>
 						</view>
 						<view class="km">
 							<span>KM/H</span>
@@ -112,7 +110,7 @@
 					{id:1,title:"首页汽车",icon:"/static/index_svg/in_car.svg"},
 					{id:2,title:"导航",icon:"/static/index_svg/in_map.svg"},
 					{id:3,title:"功能",icon:"/static/index_svg/in_monder.svg"},
-					{id:4,title:"音乐",icon:"/static/index_svg/in_music.svg"},
+					{id:4,title:"音乐",icon:"/static/index_svg/in_music.svg",path:'/pages/music/music'},
 					{id:5,title:"设置",icon:"/static/index_svg/in_set.svg"}
 				],
 				main_car_lift:{
@@ -137,11 +135,23 @@
 					{id:2,title:"车内摄像"},
 					{id:3,title:"显示设置"},
 					{id:4,title:"WIFI"},
+				],
+				dun_wun:[
+					{id:1,name:"P",path:'/pages/ReverCar/ReverCar'},
+					{id:2,name:"R",path:""},
+					{id:3,name:"N",path:""},
+					{id:4,name:"D",path:""},
+					{id:5,name:"READY",path:""},
 				]
 			}
 		},
 		methods:{
 			// 为点击的元素添加active类
+			go_to(path){
+				uni.navigateTo({
+					url:path
+				});
+			},
 			activateTab(index) {
 				// 移除之前激活的元素的active类
 				this.activeIndex = index;
@@ -162,12 +172,10 @@
 			add_max_sundun(){
 				this.data_list.max_sundun=this.data_list.max_sundun+1;
 				this.auto_red_maxsundun();
-				
 			},
 			dell_max_sundun(){
 				this.data_list.max_sundun=this.data_list.max_sundun-1;
 				this.auto_red_maxsundun();
-				
 			}
 		}
 	}

@@ -1,44 +1,115 @@
+<!-- pages/dataAnalysis/index.vue -->
 <template>
-  <view>
-    <echarts :option="chartOption" @click="handleClick"></echarts>
+  <view class="data-analysis">
+    <view class="chart-container">
+      <qiun-data-charts 
+        type="column"
+        :opts="barChartOpts"
+        :chartData="barChartData"
+      />
+    </view>
+
+    <view class="chart-container">
+      <qiun-data-charts 
+        type="line"
+        :opts="lineChartOpts"
+        :chartData="lineChartData"
+      />
+    </view>
+
   </view>
+
 </template>
 
 <script>
-import Echarts from '@/components/Echarts.vue';
+import qiunDataCharts from "@qiun/ucharts";
 
 export default {
-  components: {
-    Echarts
-  },
   data() {
     return {
-      chartOption: {
-        id: 'chart',
-        width: '100%',
-        height: '400px',
+      barChartOpts: {
+        color: ["#1890FF","#91CB74","#FAC858"],
+        legend: {},
         xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          disableGrid: true
         },
         yAxis: {
-          type: 'value'
+          data: [
+            {
+              min: 0
+            }
+          ]
         },
-        series: [{
-          data: [120, 200, 150, 80, 70, 110, 130],
-          type: 'bar',
-          showBackground: true,
-          backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
+        extra: {
+          column: {
+            type: "group"
           }
-        }]
+        }
+      },
+      barChartData: {
+        categories: ["1月", "2月", "3月", "4月", "5月", "6月"],
+        series: [
+          {
+            name: "充电次数",
+            data: [35, 36, 31, 33, 13, 34]
+          },
+          {
+            name: "充电量(kWh)",
+            data: [18, 27, 21, 24, 6, 28]
+          },
+          {
+            name: "花费(元)",
+            data: [98, 128, 65, 94, 52, 154]
+          }
+        ]
+      },
+      lineChartOpts: {
+        color: ["#1890FF","#91CB74","#FAC858"],
+        legend: {},
+        xAxis: {
+          disableGrid: true
+        },
+        yAxis: {
+          data: [
+            {
+              min: 0
+            }
+          ]
+        },
+        extra: {
+          line: {
+            type: "straight"
+          }
+        }
+      },
+      lineChartData: {
+        categories: ["3月", "5月"],
+        series: [
+          {
+            name: "耗电量(kWh)",
+            data: [200, 180]
+          },
+          {
+            name: "行驶里程(km)",
+            data: [1000, 950]
+          },
+          {
+            name: "百公里耗电量(kWh/100km)",
+            data: [20, 18.9]
+          }
+        ]
       }
-    };
-  },
-  methods: {
-    handleClick(params) {
-      console.log('Chart click:', params);
     }
   }
 }
 </script>
+
+<style>
+.data-analysis {
+  padding: 20px;
+}
+.chart-container {
+  height: 300px;
+  margin-bottom: 20px;
+}
+</style>
