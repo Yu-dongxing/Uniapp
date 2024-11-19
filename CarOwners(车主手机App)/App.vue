@@ -1,17 +1,30 @@
 <script>
-	export default {
-		onLaunch: function() {
-			console.log('App Launch')
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+export default {
+  setup() {
+    const onLaunch = () => {
+      console.log('App Launch')
+    }
+    
+    const onShow = () => {
+      console.log('App Show')
+    }
+    
+    const onHide = () => {
+      console.log('App Hide')
+    }
+
+    return {
+      onLaunch,
+      onShow,
+      onHide
+    }
+  }
+}
 </script>
 
 <style>
-	/*每个页面公共css */
-</style>
+/*每个页面公共css */
+page {
+  background-color: #f5f5f5;
+}
+</style> 

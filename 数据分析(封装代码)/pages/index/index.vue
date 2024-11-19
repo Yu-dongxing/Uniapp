@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import qiunDataCharts from "@qiun/ucharts";
+import { uCharts } from '@qiun/ucharts'
 
 export default {
   data() {
