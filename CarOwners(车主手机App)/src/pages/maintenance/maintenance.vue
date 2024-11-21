@@ -323,7 +323,6 @@ export default {
     &.active {
       color: #4CAF50;
       font-weight: bold;
-      
       &::after {
         content: '';
         position: absolute;
@@ -342,7 +341,6 @@ export default {
 // 预约表单样式
 .booking-form {
   padding: 20rpx;
-  
   .form-section {
     background: #fff;
     border-radius: 16rpx;
@@ -366,12 +364,10 @@ export default {
       &:last-child {
         border-bottom: none;
       }
-      
       .label {
         font-size: 28rpx;
         color: #333;
       }
-      
       .picker {
         font-size: 28rpx;
         color: #666;
@@ -387,25 +383,21 @@ export default {
   .plan-item {
     padding: 20rpx 0;
     border-bottom: 1rpx solid #f5f5f5;
-    
     .item-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10rpx;
-      
       .name {
         font-size: 28rpx;
         color: #333;
       }
-      
       .price {
         font-size: 28rpx;
         color: #ff6b6b;
         font-weight: bold;
       }
     }
-    
     .desc {
       font-size: 24rpx;
       color: #999;

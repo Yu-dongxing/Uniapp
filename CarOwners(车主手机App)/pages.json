@@ -26,34 +26,34 @@
     }
   ],
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "color": "#999999",
+    "selectedColor": "#4CAF50",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "src/pages/index/index",
         "text": "首页",
-        "iconPath": "./static/images/tabbar/home.png",
-        "selectedIconPath": "./static/images/tabbar/home-active.png"
+        "iconPath": "static/icons/nav/home.svg",
+        "selectedIconPath": "static/icons/nav/home-active.svg"
       },
       {
         "pagePath": "src/pages/my-car/my-car",
         "text": "我的车辆",
-        "iconPath": "./static/images/tabbar/car.png",
-        "selectedIconPath": "./static/images/tabbar/car-active.png"
+        "iconPath": "static/icons/nav/car.svg",
+        "selectedIconPath": "static/icons/nav/car-active.svg"
       },
       {
         "pagePath": "src/pages/maintenance/maintenance",
         "text": "保养维修",
-        "iconPath": "./static/images/tabbar/maintenance.png",
-        "selectedIconPath": "./static/images/tabbar/maintenance-active.png"
+        "iconPath": "static/icons/nav/maintenance.svg",
+        "selectedIconPath": "static/icons/nav/maintenance-active.svg"
       },
       {
         "pagePath": "src/pages/user/user",
         "text": "我的",
-        "iconPath": "./static/images/tabbar/user.png",
-        "selectedIconPath": "./static/images/tabbar/user-active.png"
+        "iconPath": "static/icons/nav/user.svg",
+        "selectedIconPath": "static/icons/nav/user-active.svg"
       }
     ]
   },
