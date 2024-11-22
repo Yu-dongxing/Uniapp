@@ -1,22 +1,21 @@
-import App from './App'
-
-// #ifndef VUE3
-import Vue from 'vue'
-import './uni.promisify.adaptor'
-Vue.config.productionTip = false
-App.mpType = 'app'
-const app = new Vue({
-  ...App
-})
-app.$mount()
-// #endif
-
-// #ifdef VUE3
 import { createSSRApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App'
+import { useVehicleStore } from '@/stores/vehicle'
+
+// 导入全局样式
+import './uni.scss'
+
 export function createApp() {
   const app = createSSRApp(App)
+  const pinia = createPinia()
+  app.use(pinia)
+  
+  // 初始化车辆store
+  const vehicleStore = useVehicleStore()
+  vehicleStore.init()
+  
   return {
     app
   }
 }
-// #endif

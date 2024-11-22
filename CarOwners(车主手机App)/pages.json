@@ -23,6 +23,18 @@
       "style": {
         "navigationBarTitleText": "个人中心"
       }
+    },
+    {
+      "path": "src/pages/data-analysis/data-analysis",
+      "style": {
+        "navigationBarTitleText": "数据分析"
+      }
+    },
+    {
+      "path": "src/pages/search/search",
+      "style": {
+        "navigationStyle": "custom"
+      }
     }
   ],
   "tabBar": {
@@ -50,6 +62,12 @@
         "selectedIconPath": "static/icons/nav/maintenance-active.svg"
       },
       {
+        "pagePath": "src/pages/data-analysis/data-analysis",
+        "text": "数据分析",
+        "iconPath": "static/icons/nav/analysis.svg",
+        "selectedIconPath": "static/icons/nav/analysis-active.svg"
+      },
+      {
         "pagePath": "src/pages/user/user",
         "text": "我的",
         "iconPath": "static/icons/nav/user.svg",
@@ -62,5 +80,11 @@
     "navigationBarTitleText": "车主助手",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^qiun-data-charts": "@/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue"
+    }
   }
 } 

@@ -4,7 +4,9 @@
     <view class="search-bar">
       <view class="search-box" @tap="navigateToSearch">
         <svg-icon name="search" type="common" size="32" />
-        <text class="placeholder">搜索服务、商品</text>
+        <view class="search-placeholder">
+          <text>搜索服务、商品</text>
+        </view>
       </view>
     </view>
 
@@ -245,7 +247,7 @@ export default {
   methods: {
     navigateToSearch() {
       uni.navigateTo({
-        url: '/pages/search/index'
+        url: '/src/pages/search/search'
       })
     },
     handleBannerClick(item) {
@@ -297,9 +299,10 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 20rpx 30rpx;
   background-color: #ffffff;
   box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+  padding: 20rpx 30rpx;
+  margin-top: 44px;
   
   .search-box {
     display: flex;
@@ -307,18 +310,32 @@ export default {
     background-color: #f5f5f5;
     padding: 15rpx 20rpx;
     border-radius: 30rpx;
+    position: relative;
+    z-index: 101;
     
-    .placeholder {
+    svg-icon {
+      flex-shrink: 0;
+      color: #999;
+    }
+    
+    .search-placeholder {
       flex: 1;
       margin-left: 10rpx;
-      font-size: 28rpx;
-      color: #999;
+      
+      text {
+        font-size: 28rpx;
+        color: #999;
+      }
+    }
+    
+    &:active {
+      opacity: 0.8;
     }
   }
 }
 
 .banner {
-  margin-top: 90rpx;
+  margin-top: 140rpx;
   height: 300rpx;
   
   image {
