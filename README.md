@@ -9,6 +9,7 @@
 
 ```vue
 less：css优化语言
+scss：css
 u-charts：数据分析插件
 e-charts：
 ```
@@ -16,15 +17,15 @@ e-charts：
 ## 文件结构
 | 项目名 | 项目链接 | 完成情况 | 最后完成日期 |
 | :--- | :--- | :--- | :--- |
-| 试题(一) | [试题(一)](试题(一)) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> | 10月20日 |
+| 试题(一) | [试题(一)](试题(一)) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> | 10月03日 |
 | DEMO(智能充电商用版小程序-测试) | [智能充电商用版小程序-测试](./Demo/) | <font style="background:#DBF1B7;color:#2A4200">已完成</font> | 10月21日 |
-| CarOwners(车主手机App) | [CarOwners(车主手机App)](./CarOwners(车主手机App)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月24日 |
-| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 10月24日 |
+| CarOwners(车主手机App) | [CarOwners(车主手机App)](./CarOwners(车主手机App)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 11月22日 |
+| IVIZTaskX(中控屏) | [IVIZTaskX(中控屏)](./IVIZTaskX(中控屏)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 10月31日 |
 | DIC（仪表盘） | [仪表盘](./DIC(仪表盘)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月22日 |
-| Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月01日 |
+| Charge(智能充电家用版App) | [Charge(智能充电家用版App)](./Charge(智能充电家用版App)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 11月22日 |
 | dist2(智能充电商用版小程序) | [dist2(智能充电商用版小程序)](./dist2(智能充电商用版小程序)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 10月24日 |
 | IVIFTaskX(副屏 ) | [IVIFTaskX(副屏 )](./IVIFTaskX(副屏%20)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月01日 |
-| 数据分析(封装代码) | [数据分析(封装代码)](./数据分析(封装代码)/) | <font style="background:#F6E1AC;color:#664900">待开始</font> | 10月23日 |
+| 数据分析(封装代码) | [数据分析(封装代码)](./数据分析(封装代码)/) | <font style="background:#F8CED3;color:#70000D">开发中</font> | 11月22日 |
 
 
 
