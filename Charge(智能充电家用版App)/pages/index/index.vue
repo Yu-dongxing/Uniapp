@@ -15,8 +15,7 @@
           {{ chargingStatus.batteryLevel.toFixed(1) }}%
         </text>
       </view>
-      <text class="connection-status" 
-            :class="{ 'connected': chargingStatus.isConnected }">
+      <text class="connection-status" :class="{ 'connected': chargingStatus.isConnected }">
         {{ chargingStatus.isConnected ? '已连接' : '未连接' }}
       </text>
     </view>
