@@ -108,7 +108,7 @@ export default {
       ],
       menuList: [
         { name: '我的优惠券', icon: '/static/images/icons/coupon.png', desc: '3张可用', url: '/pages/coupon/coupon' },
-        { name: '我的收藏', icon: '/static/images/icons/favorite.png', url: '/pages/favorite/favorite' },
+        { name: '我的收藏', icon: '/static/images/icons/favorite.png', desc: '3', url: '/pages/favorite/favorite' },
         { name: '地址管理', icon: '/static/images/icons/address.png', url: '/pages/address/address' },
         { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
         { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
