@@ -124,6 +124,10 @@
         <text class="button-icon">🔌</text>
         <text>添加充电桩</text>
       </view>
+	  <view class="action-button secondary" @click="navigateToUserContol">
+	    <text class="button-icon">👃</text>
+	    <text>用户中心</text>
+	  </view>
     </view>
   </view>
 </template>
@@ -500,6 +504,11 @@ export default {
         store.startCharging()
       }
     },
+	navigateToUserContol(){
+		uni.navigateTo({
+			url:'/pages/user/user'
+		})
+	},
     
     formatTime(minutes) {
       const hours = Math.floor(minutes / 60)
