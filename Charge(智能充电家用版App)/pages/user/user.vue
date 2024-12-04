@@ -7,7 +7,7 @@
           <image class="avatar" :src="userInfo.avatar || '/static/images/default-avatar.png'" mode="aspectFill"></image>
         </view>
         <view class="user-info">
-          <text class="nickname">{{ userInfo.nickname || '未登录' }}</text>
+          <text class="nickname">{{ userInfo.username || '未登录' }}</text>
           <text class="phone">{{ userInfo.phone || '点击登录' }}</text>
         </view>
         <view class="setting-btn">
@@ -87,7 +87,11 @@
 export default {
   data() {
     return {
-      userInfo: {},
+      userInfo: {
+		  username:"123131",
+		  password:"1231",
+		  phone:"123",
+	  },
       orderTypes: [
         { name: '待付款', icon: '/static/images/icons/unpaid.png', count: 1 },
         { name: '待服务', icon: '/static/images/icons/unservice.png', count: 2 },
@@ -322,6 +326,7 @@ export default {
       font-size: 24rpx;
       color: #333;
     }
+	
   }
 }
 

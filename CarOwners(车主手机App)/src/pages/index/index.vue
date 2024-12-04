@@ -30,7 +30,7 @@
     </swiper>
 
     <!-- 快捷功能区 -->
-    <view class="grid-section">
+<!--    <view class="grid-section">
       <view 
         class="grid-item" 
         v-for="(item, index) in gridList" 
@@ -45,10 +45,10 @@
         />
         <text>{{ item.name }}</text>
       </view>
-    </view>
+    </view> -->
 
     <!-- 优惠活动 -->
-    <view class="promotion-section">
+<!--    <view class="promotion-section">
       <view class="section-header">
         <text class="title">热门服务</text>
         <text class="more" @tap="navigateToMore">更多服务 ></text>
@@ -78,7 +78,7 @@
           </view>
         </view>
       </scroll-view>
-    </view>
+    </view> -->
 
     <!-- 推荐商家 -->
     <view class="shop-section">

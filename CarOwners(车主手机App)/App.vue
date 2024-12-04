@@ -12,7 +12,7 @@ export default {
     const onHide = () => {
       console.log('App Hide')
     }
-
+	
     return {
       onLaunch,
       onShow,
