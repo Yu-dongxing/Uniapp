@@ -25,6 +25,12 @@
 			"style": {
 				"navigationBarTitleText": "充电记录"
 			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
 		}
 	],
 	"globalStyle": {
