@@ -8,7 +8,7 @@
         </view>
         <view class="user-info">
           <text class="nickname">{{ userInfo.username || '未登录' }}</text>
-          <text class="phone">{{ userInfo.phone || '点击登录' }}</text>
+          <text v-if="!islogin"  class="phone" @click=" !islogin?gologin():'' ">点击登录</text>
         </view>
         <view class="setting-btn">
           <uni-icons type="gear" size="24" color="#fff"></uni-icons>
@@ -66,9 +66,8 @@
         </view>
       </view>
     </view>
-
     <!-- 功能列表 -->
-    <view class="card-section menu-list">
+<!--    <view class="card-section menu-list">
       <view class="menu-item" v-for="(item, index) in menuList" :key="index" @tap="handleMenu(item)">
         <view class="left">
           <image :src="item.icon"></image>
@@ -79,7 +78,7 @@
           <uni-icons type="right" size="14" color="#999"></uni-icons>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
 </template>
 
@@ -87,10 +86,12 @@
 export default {
   data() {
     return {
+	  islogin:false,
       userInfo: {
-		  username:"123131",
-		  password:"1231",
-		  phone:"123",
+		  avatar:"",
+		  username:"",
+		  password:"",
+		  phone:"",
 	  },
       orderTypes: [
         { name: '待付款', icon: '/static/images/icons/unpaid.png', count: 1 },
@@ -108,15 +109,16 @@ export default {
           name: '违章记录', 
           icon: '/static/images/icons/violation.png',
           url: '/src/pages/violation-record/index'
-        }
+        },
+		
       ],
-      menuList: [
-        { name: '我的优惠券', icon: '/static/images/icons/coupon.png', desc: '3张可用', url: '/pages/coupon/coupon' },
-        { name: '我的收藏', icon: '/static/images/icons/favorite.png', desc: '3', url: '/pages/favorite/favorite' },
-        { name: '地址管理', icon: '/static/images/icons/address.png', url: '/pages/address/address' },
-        { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
-        { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
-      ]
+      // menuList: [
+      //   { name: '我的优惠券', icon: '/static/images/icons/coupon.png', desc: '3张可用', url: '/pages/coupon/coupon' },
+      //   { name: '我的收藏', icon: '/static/images/icons/favorite.png', desc: '3', url: '/pages/favorite/favorite' },
+      //   { name: '地址管理', icon: '/static/images/icons/address.png',url: '/pages/address/address' },
+      //   { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
+      //   { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
+      // ]
     }
   },
   methods: {
@@ -139,7 +141,40 @@ export default {
       uni.navigateTo({
         url: item.url
       })
-    }
+    },
+	gologin(){
+		uni.navigateTo({
+			url:"/pages/login/login"
+		})
+	},
+	get_re_user(){
+		this.$request("/dev-api/getInfo","GET").then(res=>{
+			console.log(res);
+			if (res.code === 200) {
+				this.islogin=true;
+				this.userInfo.username=res.user.userName;
+				this.userInfo.avatar = res.user.avatar;
+			} else {
+				uni.showToast({
+					title: '请求失败',
+					icon: 'none',
+					duration: 2000
+				});
+			}
+		}).catch(err=>{
+			console.log(err);
+			uni.showToast({
+				title: '请求失败',
+				icon: 'none',
+				duration: 2000
+			});
+		})
+	}
+
+	
+  },
+  onLoad() {
+  	this.get_re_user();
   }
 }
 </script>

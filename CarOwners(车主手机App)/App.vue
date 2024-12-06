@@ -8,7 +8,6 @@ export default {
     const onShow = () => {
       console.log('App Show')
     }
-    
     const onHide = () => {
       console.log('App Hide')
     }
