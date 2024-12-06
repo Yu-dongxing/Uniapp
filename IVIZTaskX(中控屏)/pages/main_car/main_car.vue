@@ -99,7 +99,6 @@
 			return {
 				in_active:0,
 				sundun_active:0,
-				// isDisabled:0,
 				main_car_lift:{
 					power_icon:"/static/main_car_lift_icon/power.svg",
 					voide_top_icon:"/static/main_car_lift_icon/voide_top.svg",
@@ -108,14 +107,14 @@
 				},
 				main_car_right:{
 					wifi_icon:"/static/main_car_right_icon/wifi.svg",
-					
 				},
 				data_list:{
 					sundun:70,
 					max_sundun:70,
 					car_sundun_ch:"",
 					power:"471",
-					
+					fuel:75,          // 油量
+					tirePressure:32,  // 胎压
 				},
 				list:[
 					{id:1,title:"安全辅助"},
@@ -137,16 +136,14 @@
 				if(this.data_list.max_sundun>=80){
 					this.sundun_active=1;
 				}
-				
 			},
 			dell_max_sundun(){
 				this.data_list.max_sundun=this.data_list.max_sundun-1;
 				if(this.data_list.max_sundun<=80){
 					this.sundun_active=0;
 				}
-				
-			}
-		}
+			},
+		},
 	}
 </script>
 
@@ -434,5 +431,31 @@
 	  border-top-left-radius: 25px;
 	  background-color: #4d4d4d;
 	}
+}
+
+.car-status {
+  padding: 15px;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.status-item {
+  flex: 1;
+  text-align: center;
+}
+
+.status-label {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.status-value {
+  font-size: 20px;
+  font-weight: bold;
 }
 </style>
