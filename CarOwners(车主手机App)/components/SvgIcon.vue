@@ -84,6 +84,7 @@ export default {
       if (this.type === 'services') {
         return themeColor;
       }
+	  
       
       return colorMap[this.name] || themeColor;
     }
