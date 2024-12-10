@@ -1,11 +1,9 @@
 <template>
 	<view class="dashboard">
 		<maop @updateActiveIndex="handleActiveIndex"></maop>
-		<view class="sildebar-r">
-			<maincar v-if="tap==0"></maincar>
-			<music v-if="tap==1"></music>
-			<air v-if="tap==2" ></air>
-		</view>
+		<scroll-view class="sidebar-r" scroll-y="true">
+			<component :is="currentComponent"></component>
+		</scroll-view>
 	</view>
 </template>
 
@@ -13,66 +11,70 @@
 	import maop from '@/components/maop.vue'
 	import maincar from '@/components/main_car.vue'
 	import music from '@/components/music/music.vue'
+	import Functional from '@/components/Functional/Functional.vue'
+	import User from '@/components/User/User.vue'
+
+	const componentsMap = {
+		0: 'maincar',
+		1: 'music',
+		2: 'air',
+		3: 'Functional',
+		4: 'User'
+	}
+
 	export default {
-		components:{
-			maop ,
+		components: {
+			maop,
 			maincar,
-			music
-			},//2.注册组件
+			music,
+			Functional,
+			User
+		},
 		data() {
 			return {
-				tap:0,
-				
+				tap: 0,
+				currentComponent: 'maincar'
 			}
 		},
-		methods:{
+		methods: {
 			handleActiveIndex(index) {
-				this.tap=index;
-			}
+				this.tap = index;
+				this.currentComponent = componentsMap[index];
+			},
 		},
 		onLoad() {
-			
+			// 初始化操作
 		}
 	}
 </script>
 
 <style lang="less">
-	*{
-		padding: 0px;
-		margin: 0px;
+	* {
+		padding: 0;
+		margin: 0;
 	}
-	:main{
-		
-	}
-	.sildebar-l::-webkit-scrollbar{
-		width: 5px;
-	}
-	.sildebar-l::-webkit-scrollbar-thumb{
-		background-color: #535353;
-	}
-	.dashboard{
-		--background-block:#2a2a2a;
-		//var(--background-block)
-		--font-size:40px;
-		
-	}
-	.dashboard{
+
+	.dashboard {
 		display: flex;
 		height: 100vh;
 		width: 100vw;
 		background-color: #000000;
 	}
-	.sildebar-r{
+
+	.sidebar-r {
 		box-sizing: border-box;
 		padding: 10px;
 		border-bottom-left-radius: 10px;
 		border-top-left-radius: 10px;
 		margin-left: 5px;
-		width:100%;
-		height:100%;
+		width: 100%;
+		height: 100%;
 		background-color: #535353;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		}
+		overflow-y: auto; /* 使用标准属性 */
+	}
+
+	/* 移除未使用的样式 */
 </style>
