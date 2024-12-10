@@ -19,7 +19,6 @@
 				sundun_active:0,
 				index_item:[
 					{id:1,title:"首页汽车",icon:"/static/index_svg/in_car.svg"},
-					//title:"音乐",icon:"/static/index_svg/in_music.svg"},title:"功能",icon:"/static/index_svg/in_monder.svg"},title:"导航",icon:"/static/index_svg/in_map.svg"},
 					{id:2,title:"导航",icon:"/static/index_svg/in_map.svg"},
 					{id:3,title:"功能",icon:"/static/index_svg/in_monder.svg"},
 					{id:4,title:"音乐",icon:"/static/index_svg/in_music.svg"},
