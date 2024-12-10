@@ -3,14 +3,14 @@
 		<view class="car_l">
 			<view class="l_top">
 				<view class="sundun">
-					<text class="num" :class="data_list.sundun>=80?'num_red':'' ">{{ data_list.sundun }}</text>
+					<text class="num" :class="data_list.sundun>=80?'num_red':' ' ">{{ data_list.sundun }}</text>
 					<span class="km">KM/H</span>
 				</view>
 			</view>
 			<view class="l_dun">
 				<view class="dunwen_list">
 					<view class="list_item" v-for="(item,index) in dunwen" >
-						<view class="item_bu" :class="{ 'item_bu_active': index_dunwen === index }" @tap="in_dunwen(index)">
+						<view class="item_bu" :class="{ 'item_bu_active': index_dunwen === index }" @tap="in_dunwen(index)" @click="goto_page(item.path)">
 							 <text>{{ item.name }}</text>
 						</view>
 					</view>
@@ -26,10 +26,11 @@
 		name:"macar",
 		data() {
 			return {
+				tab_index:0,
 				index_dunwen:0,
 				dunwen:[
-					{id:1,name:"P",path:'/pages/ReverCar/ReverCar'},
-					{id:2,name:"R",path:""},
+					{id:1,name:"P",path:''},
+					{id:2,name:"R",path:"/pages/ReverCar/ReverCar"},
 					{id:3,name:"N",path:""},
 					{id:4,name:"D",path:""},
 					{id:5,name:"READY",path:""},
@@ -47,7 +48,7 @@
 				},
 				
 				data_list:{
-					sundun:70,
+					sundun:90,
 					max_sundun:70,
 					car_sundun_ch:"",
 					power:"471",
@@ -68,6 +69,7 @@
 			},
 			in_dunwen(index){
 				this.index_dunwen = index;
+				// this.$emit('updatedunwen',this.index_dunwen);
 			},
 			f_sundun_active(){
 				this.sundun_active= !this.sundun_active;
@@ -84,15 +86,20 @@
 					this.sundun_active=0;
 				}
 			},
+			goto_page(url){
+				uni.navigateTo({
+					url:url
+				})
+			}
 		},
 	}
 </script>
 
 <style lang="less">
-	:root{
+	.main_car{
 		--background--bg:#2a2a2a;
 		--font-size-big:50px;
-		--font-size-defint:30px;
+		--font-size-defint:15.5px;
 		
 	}
 	.main_car{
@@ -108,7 +115,7 @@
 			.l_top{
 				width: 100%;
 				height: 80px;
-				background-color: var(--background--bg);
+				// background-color: var(--background--bg);
 				display: flex;
 				justify-content: center;
 				align-items: center;
