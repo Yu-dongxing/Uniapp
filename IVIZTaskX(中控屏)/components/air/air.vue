@@ -1,4 +1,3 @@
-<!-- components/AirConditioner.vue -->
 <template>
   <view class="air-conditioner">
     <view class="temperature-display">

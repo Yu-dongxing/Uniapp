@@ -1,23 +1,33 @@
 <template>
 	<view class="dashboard">
 		<maop @updateActiveIndex="handleActiveIndex"></maop>
-		<scroll-view class="sidebar-r" scroll-y="true">
+		<scroll-view class="sidebar-r" scroll-y="true" show-scrollbar="false">
 			<component :is="currentComponent"></component>
 		</scroll-view>
 	</view>
 </template>
 
 <script>
+	//引入左侧导航栏
 	import maop from '@/components/maop.vue'
+	//在主页面中显示的组件
 	import maincar from '@/components/main_car.vue'
 	import music from '@/components/music/music.vue'
 	import Functional from '@/components/Functional/Functional.vue'
 	import User from '@/components/User/User.vue'
+	import CarInfo from '@/components/CarInfo/CarInfo.vue'
 
+	// const componentsMap = {
+	// 	0: 'maincar',
+	// 	1: 'music',
+	// 	2: 'air',
+	// 	3: 'Functional',
+	// 	4: 'User'
+	// }
 	const componentsMap = {
 		0: 'maincar',
 		1: 'music',
-		2: 'air',
+		2: 'CarInfo',
 		3: 'Functional',
 		4: 'User'
 	}
@@ -28,7 +38,8 @@
 			maincar,
 			music,
 			Functional,
-			User
+			User,
+			CarInfo
 		},
 		data() {
 			return {

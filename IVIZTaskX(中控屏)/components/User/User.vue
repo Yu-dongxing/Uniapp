@@ -17,6 +17,7 @@
 </template>
 
 <script>
+	// import store from '../../store';
 	import login from '../login/login.vue';
 	export default {
 		name:"User",
@@ -34,26 +35,25 @@
 			};
 		},
 		methods:{
-			check_get_istoken() {
-			      this.islogin = !!uni.getStorageSync('token');
-			},
-			if_login(index){
-				console.log(index);
-				this.islogin=index;
-			},
 			get_user_info(){
-				// this.$store.commit('setAuthLogin',true);
-				console.log(this.$store.state.isAuthLogin);
-				this.$request("/dev-api/getInfo",'GET').then(res=>{
-					this.user_info.user_name=res.user.userName;
-				}).catch(err=>{
+				if(this.$store.state.isAuthLogin){
+					// this.$store.commit('setAuthLogin',true);
+					console.log(this.$store.state.isAuthLogin);
+					this.$request("/dev-api/getInfo",'GET').then(res=>{
+						this.user_info.user_name=res.user.userName;
+						console.log(res.user.userId);
+						uni.setStorageSync('userid', res.user.userId );
+					}).catch(err=>{
+						console.log(err);
+					})
+				}else{
 					
-				})
+				}
 			},
 			
 		},
 		created(){
-			this.check_get_istoken();
+			// this.check_get_istoken();
 			this.get_user_info();
 		},
 		onLoad(){

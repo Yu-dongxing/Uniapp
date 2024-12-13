@@ -1,27 +1,43 @@
 <template>
-  <view class="grid-container">
+  <view class="grid-container" v-if="index==0">
     <view class="grid-item" v-for="(item, index) in gridItems" :key="index">
       <view class="icon">{{ item.icon }}</view>
       <text>{{ item.label }}</text>
     </view>
   </view>
+  <Popups title="组件" v-if="index==1">
+	  <!-- <air></air> -->
+	  <AppMark></AppMark>
+  </Popups>
 </template>
 
 <script>
+//
+import Popups from '../Popups/Popups.vue';
+//
+import air from '../air/air.vue';//空调组件
+import AppMark from '../AppMark/AppMark.vue';//应用市场组件
 export default {
   name: "Functional",
+  comments:{
+	  Popups,
+	  air,
+	  AppMark
+  },
   data() {
     return {
+	  index:1,
+	  
       gridItems: [
         { icon: '❄️', label: '空调' },
         { icon: '🔘', label: '胎压' },
         { icon: '🚗', label: '车辆信息' },
-        { icon: '🚦', label: '违章查询' },
-        { icon: '📹', label: '行车记录' },
-        { icon: '📋', label: '任务管理' },
-        { icon: '📁', label: '文件管理' },
-        { icon: '📘', label: '升级手册' },
-        { icon: '🎥', label: '视频手册' },
+        // { icon: '🚦', label: '违章查询' },
+        // { icon: '📹', label: '行车记录' },
+        // { icon: '📋', label: '任务管理' },
+        // { icon: '📁', label: '文件管理' },
+        // { icon: '📘', label: '升级手册' },
+        // { icon: '🎥', label: '视频手册' },
       ]
     };
   }
@@ -51,7 +67,8 @@ export default {
   gap: 15px;
   flex-grow: 1;
   overflow: auto;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  // background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  
   .grid-item {
     flex-basis: calc(25% - 15px);
     aspect-ratio: 1;
