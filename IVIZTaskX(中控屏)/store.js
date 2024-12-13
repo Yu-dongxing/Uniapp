@@ -20,8 +20,8 @@ const store = createStore({
 			// 从 localStorage 加载状态
 			const savedState = localStorage.getItem('isAuthLogin');
 			if (savedState) {
-			  const state = JSON.parse(savedState);
-			  commit('setAuthLogin', state);
+			  // const state = JSON.parse(savedState);
+			  commit('setAuthLogin', savedState);
 			}
 		  }
   },

@@ -103,24 +103,24 @@ export default {
                 icon: 'success',
                 duration: 2000
               });
-			  this.setstore("true");
+			  this.setstore(true);
             } else {
               uni.showToast({
                 title: '登录失败',
-                icon: 'none',
+                icon: 'error',
                 duration: 2000
               });
-			  this.setstore("false");
+			  this.setstore(false);
             }
           },
           fail: (err) => {
             console.error('请求失败:', err);
             uni.showToast({
               title: '请求失败',
-              icon: 'none',
+              icon: 'error',
               duration: 2000
             });
-			this.setstore("false");
+			this.setstore(false);
           }
         });
       } else {
