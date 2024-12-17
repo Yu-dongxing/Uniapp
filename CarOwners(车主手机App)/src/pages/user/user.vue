@@ -100,49 +100,49 @@ export default {
 		user_email:"",
 		user_login_time:'',
 	},
-      orderTypes: [
-        { name: '待付款', icon: '/static/images/icons/unpaid.png', count: 1 },
-        { name: '待服务', icon: '/static/images/icons/unservice.png', count: 2 },
-        { name: '待评价', icon: '/static/images/icons/unrated.png' },
-        { name: '退款/售后', icon: '/static/images/icons/refund.png' }
-      ],
-      serviceList: [
-        { 
-          name: '车辆档案', 
-          icon: '/static/images/icons/car-file.png',
-          url: '/src/pages/car-file/index'
-        },
-        { 
-          name: '违章记录', 
-          icon: '/static/images/icons/violation.png',
-          url: '/src/pages/violation-record/index'
-        }
-      ],
-      menuList: [
-        { name: '我的优惠券', icon: '/static/images/icons/coupon.png', desc: '3张可用', url: '/pages/coupon/coupon' },
-        { name: '我的收藏', icon: '/static/images/icons/favorite.png', desc: '3', url: '/pages/favorite/favorite' },
-        { name: '地址管理', icon: '/static/images/icons/address.png', url: '/pages/address/address' },
-        { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
-        { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
-      ]
+      // orderTypes: [
+      //   { name: '待付款', icon: '/static/images/icons/unpaid.png', count: 1 },
+      //   { name: '待服务', icon: '/static/images/icons/unservice.png', count: 2 },
+      //   { name: '待评价', icon: '/static/images/icons/unrated.png' },
+      //   { name: '退款/售后', icon: '/static/images/icons/refund.png' }
+      // ],
+      // serviceList: [
+      //   { 
+      //     name: '车辆档案', 
+      //     icon: '/static/images/icons/car-file.png',
+      //     url: '/src/pages/car-file/index'
+      //   },
+      //   { 
+      //     name: '违章记录', 
+      //     icon: '/static/images/icons/violation.png',
+      //     url: '/src/pages/violation-record/index'
+      //   }
+      // ],
+      // menuList: [
+      //   { name: '我的优惠券', icon: '/static/images/icons/coupon.png', desc: '3张可用', url: '/pages/coupon/coupon' },
+      //   { name: '我的收藏', icon: '/static/images/icons/favorite.png', desc: '3', url: '/pages/favorite/favorite' },
+      //   { name: '地址管理', icon: '/static/images/icons/address.png', url: '/pages/address/address' },
+      //   { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
+      //   { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
+      // ]
     }
   },
   methods: {
-    viewAllOrders() {
-      uni.navigateTo({
-        url: '/pages/order-list/order-list'
-      })
-    },
-    handleOrderType(item) {
-      uni.navigateTo({
-        url: `/pages/order-list/order-list?type=${item.type}`
-      })
-    },
-    handleService(item) {
-      uni.navigateTo({
-        url: item.url
-      })
-    },
+    // viewAllOrders() {
+    //   uni.navigateTo({
+    //     url: '/pages/order-list/order-list'
+    //   })
+    // },
+    // handleOrderType(item) {
+    //   uni.navigateTo({
+    //     url: `/pages/order-list/order-list?type=${item.type}`
+    //   })
+    // },
+    // handleService(item) {
+    //   uni.navigateTo({
+    //     url: item.url
+    //   })
+    // },
     gotourl() {
       uni.navigateTo({
         url: '../Login/Login'
