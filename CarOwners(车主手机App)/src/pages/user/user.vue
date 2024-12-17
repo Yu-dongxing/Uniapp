@@ -9,11 +9,17 @@
         <view class="user-info" >
           <text class="nickname" v-if="!is_need_login">{{ userInfo.nickname || '未登录' }}</text> 
           <text class="phone" @click="gotourl()" v-if="is_need_login">{{ userInfo.phone || '点击登录' }} </text>
+        <view class="user-info" >
+          <text class="nickname" v-if="!is_need_login">{{ userInfo.nickname || '未登录' }}</text> 
+          <text class="phone" @click="gotourl()" v-if="is_need_login">{{ userInfo.phone || '点击登录' }} </text>
         </view>
+<!--        <view class="setting-btn">
 <!--        <view class="setting-btn">
           <uni-icons type="gear" size="24" color="#fff"></uni-icons>
         </view> -->
+        </view> -->
       </view>
+      <!-- <view class="user-stats">
       <!-- <view class="user-stats">
         <view class="stat-item">
           <text class="value">0</text>
@@ -28,9 +34,11 @@
           <text class="label">积分</text>
         </view>
       </view> -->
+      </view> -->
     </view>
 
     <!-- 我的订单 -->
+<!--    <view class="card-section order-section">
 <!--    <view class="card-section order-section">
       <view class="section-header">
         <view class="left">
@@ -51,8 +59,10 @@
         </view>
       </view>
     </view> -->
+    </view> -->
 
     <!-- 我的服务 -->
+<!--    <view class="card-section service-section">
 <!--    <view class="card-section service-section">
       <view class="section-header">
         <view class="left">
@@ -66,8 +76,10 @@
         </view>
       </view>
     </view> -->
+    </view> -->
 
     <!-- 功能列表 -->
+<!--    <view class="card-section menu-list">
 <!--    <view class="card-section menu-list">
       <view class="menu-item" v-for="(item, index) in menuList" :key="index" @tap="handleMenu(item)">
         <view class="left">
@@ -80,13 +92,19 @@
         </view>
       </view>
     </view> -->
+    </view> -->
   </view>
+  
   
 </template>
 
 <script>
 import Login from '@/components/Login/Login.vue'
+import Login from '@/components/Login/Login.vue'
 export default {
+	components:{
+		Login,
+	},
 	components:{
 		Login,
 	},
@@ -125,6 +143,39 @@ export default {
       //   { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
       //   { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
       // ]
+	is_need_login:true,
+	userInfo:{
+		phone:'',
+		nickname:"",
+		user_name:"",
+		user_email:"",
+		user_login_time:'',
+	},
+      orderTypes: [
+        { name: '待付款', icon: '/static/images/icons/unpaid.png', count: 1 },
+        { name: '待服务', icon: '/static/images/icons/unservice.png', count: 2 },
+        { name: '待评价', icon: '/static/images/icons/unrated.png' },
+        { name: '退款/售后', icon: '/static/images/icons/refund.png' }
+      ],
+      serviceList: [
+        { 
+          name: '车辆档案', 
+          icon: '/static/images/icons/car-file.png',
+          url: '/src/pages/car-file/index'
+        },
+        { 
+          name: '违章记录', 
+          icon: '/static/images/icons/violation.png',
+          url: '/src/pages/violation-record/index'
+        }
+      ],
+      menuList: [
+        { name: '我的优惠券', icon: '/static/images/icons/coupon.png', desc: '3张可用', url: '/pages/coupon/coupon' },
+        { name: '我的收藏', icon: '/static/images/icons/favorite.png', desc: '3', url: '/pages/favorite/favorite' },
+        { name: '地址管理', icon: '/static/images/icons/address.png', url: '/pages/address/address' },
+        { name: '联系客服', icon: '/static/images/icons/service.png', url: '/pages/service/service' },
+        { name: '设置', icon: '/static/images/icons/settings.png', url: '/pages/settings/settings' }
+      ]
     }
   },
   methods: {
@@ -143,6 +194,46 @@ export default {
     //     url: item.url
     //   })
     // },
+    gotourl() {
+      uni.navigateTo({
+        url: '../Login/Login'
+      })
+    },
+	is_login(){
+		this.is_need_login=!this.is_need_login;
+	},
+	get_info(){
+		uni.request({
+			url:'http://124.93.196.45:10001/dev-api/getInfo',
+			method:'GET',
+			header:{
+				'Authorization':uni.getStorageSync('token')
+				},
+		}).then(suc=>{
+			// console.log(suc);
+			this.userInfo.nickname=suc.data.user.userName;
+			this.is_login();
+			if(suc.data.code!=200){
+				this.is_login();
+			}
+		}).catch(err=>{
+			// console.log(err);
+			this.is_login();
+		})
+	}
+  },
+  onLoad() {
+  	this.get_info();
+    handleOrderType(item) {
+      uni.navigateTo({
+        url: `/pages/order-list/order-list?type=${item.type}`
+      })
+    },
+    handleService(item) {
+      uni.navigateTo({
+        url: item.url
+      })
+    },
     gotourl() {
       uni.navigateTo({
         url: '../Login/Login'
