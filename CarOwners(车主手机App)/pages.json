@@ -35,6 +35,13 @@
       "style": {
         "navigationStyle": "custom"
       }
+    },
+    {
+    	"path" : "src/pages/Login/Login",
+    	"style" : 
+    	{
+    		"navigationBarTitleText" : "登录/注册"
+    	}
     }
   ],
   "tabBar": {
