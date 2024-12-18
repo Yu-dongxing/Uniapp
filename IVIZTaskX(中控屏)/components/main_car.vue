@@ -173,7 +173,7 @@
 			}
 		}
 		.car_r{
-			background-color: aqua;
+			// background-color: aqua;
 			margin-left: 10px;
 			width: calc(50% - 10px );
 		}
