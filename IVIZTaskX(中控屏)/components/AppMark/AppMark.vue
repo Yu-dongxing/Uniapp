@@ -1,4 +1,4 @@
-name: "AppMark",
+
 <template>
   <view class="app-market">
     <view class="header">
@@ -73,7 +73,7 @@ name: "AppMark",
 
 <script>
 export default {
-	
+	name: "AppMark",
   data() {
     return {
       searchQuery: '',
