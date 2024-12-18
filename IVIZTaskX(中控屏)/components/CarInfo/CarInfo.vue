@@ -173,8 +173,7 @@ export default {
 <style lang="less" scoped>
 .carinfo_container {
   padding: 25rpx;
-  // background-color: #5d5e5f;
-  min-height: 100vh;
+  min-height: 80vh;
   .page-title {
     font-size: 28px;
     font-weight: 700;
@@ -207,6 +206,7 @@ export default {
 
 .info-item:last-child {
   border-bottom: none;
+  
 }
 
 .label {
