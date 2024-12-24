@@ -13,8 +13,9 @@
         :key="index" 
         class="charger-item" 
         @tap="goToDetail(item.id)"
-        :style="{ animationDelay: `${index * 0.1}s` }"
+        
       >
+	  <!-- :style="{ animationDelay: `${index * 0.1}s` }" -->
         <image :src="item.thumbnail" mode="aspectFill" class="charger-image"></image>
         <view class="charger-info">
           <text class="charger-address">{{ item.address }}</text>
@@ -23,6 +24,7 @@
             <uni-icons type="location" size="14" color="#999"></uni-icons>
             {{ item.distance }}km
           </text>
+		  
         </view>
       </view>
     </scroll-view>
@@ -42,7 +44,7 @@ export default {
                 thumbnail: '',
                 distance: '',
               },
-              // 其他默认充电桩数据...
+              
             ]
     }
   },
@@ -53,6 +55,7 @@ export default {
 	  })
     },
 	getinfo(){
+		
 		uni.request({
 			url:"http://124.93.196.45:10001/dev-api/bs-smart-charger/pile/alllist",
 			header:{
@@ -87,6 +90,7 @@ export default {
 						thumbnail: charger.thumbnail || '/static/default-thumbnail.jpg', // 如果没有图片，使用默认图片
 						distance: charger.distance || '无法获取', // 如果没有距离信息，留空
 					})
+					uni.hideLoading()
 				})
 			}
 		}).catch(err=>{
@@ -100,9 +104,17 @@ export default {
     }
   },
   onLoad() {
+	  uni.showLoading({
+	  	title:"加载中",
+	  	
+	  })
   	this.getinfo()
   },
   onLaunch() {
+	  uni.showLoading({
+	  	title:"加载中",
+	  	
+	  })
   	this.getinfo()
   }
 }
