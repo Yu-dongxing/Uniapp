@@ -64,7 +64,7 @@
       },
       {
         "pagePath": "src/pages/maintenance/maintenance",
-        "text": "保养维修",
+        "text": "服务",
         "iconPath": "static/icons/nav/maintenance.svg",
         "selectedIconPath": "static/icons/nav/maintenance-active.svg"
       },
