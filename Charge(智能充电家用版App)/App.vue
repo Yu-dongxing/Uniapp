@@ -14,7 +14,6 @@
 
 <style lang="scss">
 @import '@/uni.scss';
-
 /* 每个页面公共css */
 page {
   background-color: $theme-background;

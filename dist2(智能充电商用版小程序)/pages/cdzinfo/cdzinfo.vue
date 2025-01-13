@@ -180,6 +180,9 @@ export default {
 		}).then(success=>{
 			let data = success.data.data
 			console.log(data);
+			data.forEach(item=>{
+				
+			})
 		}).catch(err=>{
 			console.log(err);
 		})
