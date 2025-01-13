@@ -30,7 +30,7 @@
 						<text>2024-12-18</text>
 					</view>
 					<view class="time">
-						<text>15:40</text>
+						<text>{{ newtime }}</text>
 					</view>
 					<view class="rl">
 						<text>阴历</text>
@@ -82,21 +82,9 @@
 		<!-- 屏幕底部显示快捷启动栏 -->
 		<view class="cher-footer">
 			<view class="footer-item">
-				<view class="item-app" @longpress="showMenu" @click="goto_page('/pages/main/main')">
+				<view class="item-app" v-for="(item,index) in AppMack" @longpress="showMenu" @click="goto_page(item.apppath)">
 					<image src="../../static/Appmack/APPC.svg"  mode="aspectFit" style="width: 48px; height: 48px;">
 					</image>
-				</view>
-				<view class="item-app">
-					<image src="../../static/Appmack/APPC.svg"  mode="aspectFit" style="width: 48px; height: 48px;"></image>
-				</view>
-				<view class="item-app">
-					<image src="../../static/Appmack/APPC.svg"  mode="aspectFit" style="width: 48px; height: 48px;"></image>
-				</view>
-				<view class="item-app">
-					<image src="../../static/Appmack/APPC.svg"  mode="aspectFit" style="width: 48px; height: 48px;"></image>
-				</view>
-				<view class="item-app">
-					<image src="../../static/Appmack/APPC.svg"  mode="aspectFit" style="width: 48px; height: 48px;"></image>
 				</view>
 			</view>
 			
@@ -112,6 +100,8 @@
 		},
 		data() {
 			return {
+				newtime:new Date().getHours()+":"+new Date().getMinutes(),
+				timeout:null,
 				weather:{
 					id:"",
 					city:'',
@@ -134,7 +124,8 @@
 					
 				},
 				AppMack:[
-					{id:"",appname:"",appicon:"",apppath:"",appnavergotourl:"",}
+					{id:"1",appname:"",appicon:"",apppath:"/pages/video/video",appnavergotourl:""},
+					{id:"2",appname:"",appicon:"",apppath:"/pages/main/main",appnavergotourl:""}
 				],
 				AppList:[
 					
@@ -183,6 +174,9 @@
 		},
 		onLoad() {
 			this.get_weather("大连市");
+			setInterval(() => {
+			      this.newtime=new Date().getHours()+":"+new Date().getMinutes(); // 每秒更新一次currentTime变量的值
+			}, 1000)
 		}
 	}
 </script>
@@ -198,7 +192,7 @@
 --text-200:#e0e0e0;
 --bg-100:#0F1C2E;
 --bg-200:#1f2b3e;
---bg-300:#374357;
+// --bg-300:#374357;
 //
 --border-radius-10:10px;
 --border-radius-20:20px;
@@ -253,7 +247,7 @@
 			  padding: 10px;
 			  box-sizing: border-box;
 			  font-size: 30px;
-			  border-radius: 15px;
+			  // border-radius: 15px;
 			  margin-top: 10px;
 			  margin-bottom: 20px;
 			  border-bottom: 1px solid var(--text-100);

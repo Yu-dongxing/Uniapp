@@ -35,6 +35,34 @@
             </view>
           </picker>
         </view>
+		<!-- 维保车辆、车牌号码、联系人姓名、联系电话 -->
+		<view class="form-item">
+		  <text class="label">维保车辆</text>
+		  <picker mode="region" @change="handleCityChange" :value="cityArray">
+		    <view class="picker">
+		      XXXXXXXXXXXXX
+		      <uni-icons type="right" size="14" color="#999"></uni-icons>
+		    </view>
+		  </picker>
+		</view>
+		<view class="form-item">
+		  <text class="label">联系人</text>
+		  <picker mode="region" @change="handleCityChange" :value="cityArray">
+		    <view class="picker">
+		      XXX
+		      <uni-icons type="right" size="14" color="#999"></uni-icons>
+		    </view>
+		  </picker>
+		</view>
+		<view class="form-item">
+		  <text class="label">联系电话</text>
+		  <picker mode="region" @change="handleCityChange" :value="cityArray">
+		    <view class="picker">
+		      XXXXXXXXXXXXX
+		      <uni-icons type="right" size="14" color="#999"></uni-icons>
+		    </view>
+		  </picker>
+		</view>
         <view class="form-item">
           <text class="label">服务站点</text>
           <picker @change="handleStationChange" :value="stationIndex" :range="stations" range-key="name">
@@ -67,7 +95,7 @@
           </picker>
         </view>
       </view>
-
+<!-- 维修方案包括更换零件、维修类目、单项价格、维修总价、维修周期。 -->
       <view class="form-section">
         <view class="section-title">维修方案</view>
         <view class="service-plan">
@@ -170,8 +198,8 @@ export default {
       timeSlots: ['09:00-10:00', '10:00-11:00', '14:00-15:00', '15:00-16:00'],
       servicePlan: [
         {
-          name: '机油更换',
-          desc: '使用原厂机油，包含机滤更换',
+          name: '更换零件',
+          desc: '使用原厂配件',
           price: 299
         },
         {

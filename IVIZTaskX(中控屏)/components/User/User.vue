@@ -37,7 +37,6 @@
 		methods:{
 			get_user_info(){
 				if(this.$store.state.isAuthLogin){
-					// this.$store.commit('setAuthLogin',true);
 					console.log(this.$store.state.isAuthLogin);
 					this.$request("/dev-api/getInfo",'GET').then(res=>{
 						this.user_info.user_name=res.user.userName;
@@ -54,6 +53,7 @@
 		},
 		created(){
 			// this.check_get_istoken();
+			
 			this.get_user_info();
 		},
 		onLoad(){

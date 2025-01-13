@@ -45,7 +45,6 @@
 						<view class="l-r"></view>
 					</view>
 					<view class="l-bu">
-						<!-- <view class="bu-item"> -->
 							<view class="item-a1">
 									<img :src="main_car_lift.voide_top_icon" alt="1" />
 							</view>
@@ -55,7 +54,6 @@
 							<view class="item-a3">
 								<img :src="main_car_lift.sign_icon" alt="1" />
 							</view>
-						<!-- </view> -->
 					</view>
 				</view>
 				<view class="t-car-r">

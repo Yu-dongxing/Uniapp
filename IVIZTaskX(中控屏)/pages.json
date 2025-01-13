@@ -48,6 +48,22 @@
 			{
 				"transparentTitle" : "always"
 			}
+		},
+		{
+			"path" : "pages/video/video",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"transparentTitle" : "always"
+			}
+		},
+		{
+			"path" : "pages/videoPlay/videoPlay",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"transparentTitle": "always"
+			}
 		}
 		// {
 		// 	"path" : "pages/Launcher/Launcher",
