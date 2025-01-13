@@ -58,9 +58,7 @@ export default {
       this.currentCity = this.cities[this.cityIndex]
       this.fetchWeatherData()
     },
-    fetchWeatherData() {
-      // 这里应该是一个实际的API调用来获取天气数据
-      // 为了演示,我们使用模拟数据
+    fetchWeatherData(){
       this.currentWeather = {
         condition: ['晴天', '多云', '雨天'][Math.floor(Math.random() * 3)],
         maxTemp: Math.floor(Math.random() * 15) + 25,
@@ -128,16 +126,13 @@ export default {
   font-size: 3em;
   margin-bottom: 40px;
 }
-
 .weather-condition i {
   font-size: 2em;
   margin-right: 20px;
 }
-
 .temperature {
   font-size: 4em;
 }
-
 .max-temp {
   color: #ff6b6b;
   margin-right: 20px;
@@ -194,8 +189,6 @@ select:focus {
 select:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
-
-/* Icons (you would need to replace these with actual icon fonts or SVGs) */
 .icon-sun::before { content: '☀️'; }
 .icon-cloud::before { content: '☁️'; }
 .icon-rain::before { content: '🌧️'; }

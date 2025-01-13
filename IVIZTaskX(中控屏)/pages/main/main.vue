@@ -16,14 +16,6 @@
 	import Functional from '@/components/Functional/Functional.vue'
 	import User from '@/components/User/User.vue'
 	import CarInfo from '@/components/CarInfo/CarInfo.vue'
-
-	// const componentsMap = {
-	// 	0: 'maincar',
-	// 	1: 'music',
-	// 	2: 'air',
-	// 	3: 'Functional',
-	// 	4: 'User'
-	// }
 	const componentsMap = {
 		0: 'maincar',
 		1: 'music',
@@ -55,6 +47,7 @@
 		},
 		onLoad() {
 			// 初始化操作
+			
 		}
 	}
 </script>

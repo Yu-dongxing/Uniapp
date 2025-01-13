@@ -2,20 +2,15 @@
 <template>
   <view class="panorama-container">
     <view class="video-area">
-		
       <view class="rear-view">
         <video :src="rearVideoSrc" autoplay>
 			<canvas canvas-id="assistLine" class="assist-line"></canvas>
 		</video>
-        
       </view>
-	  
       <view class="panorama-view">
         <video :src="panoramaVideoSrc" autoplay></video>
       </view>
-	  
     </view>
-	
     <view class="control-area">
       <button @tap="showFocusOptions">专注</button>
       <button @tap="closeApp">关闭</button>
@@ -47,7 +42,6 @@ export default {
         itemList: ['前', '后', '左', '右', '360度'],
         success: (res) => {
           console.log('选择了', res.tapIndex)
-          // 根据选择切换视频源
         }
       })
     },

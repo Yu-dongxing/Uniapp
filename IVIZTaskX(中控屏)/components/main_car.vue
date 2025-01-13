@@ -69,7 +69,7 @@
 			},
 			in_dunwen(index){
 				this.index_dunwen = index;
-				// this.$emit('updatedunwen',this.index_dunwen);
+				this.AbortSignal.Animation=index;
 			},
 			f_sundun_active(){
 				this.sundun_active= !this.sundun_active;
